@@ -1,6 +1,6 @@
 # BOXT CircleCI Rails assets orb
 
-<!-- PLACEHOLDER_START -->
-<!-- PLACEHOLDER_END -->
-
+<!-- VERSION_SNIPPET_START -->
+<!-- VERSION_SNIPPET_END -->
+  
 Part of [boxt/orbs](https://github.com/boxt/orbs)
