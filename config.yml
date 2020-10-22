@@ -1,5 +1,11 @@
 version: 2.1
+
 descrption: Tasks for managing Rails assets in CircleCI builds
+
+display:
+  home_url: "https://github.com/boxt/orbs"
+  source_url: "https://github.com/boxt/rails-assets-orb/blob/master/config.yml"
+
 commands:
   precompile:
     steps:
