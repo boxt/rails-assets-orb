@@ -1,6 +1,6 @@
 version: 2.1
 
-descrption: Tasks for managing Rails assets in CircleCI builds
+description: Tasks for managing Rails assets in CircleCI builds
 
 display:
   home_url: "https://github.com/boxt/orbs"
