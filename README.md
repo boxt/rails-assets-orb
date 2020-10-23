@@ -5,7 +5,7 @@
 
 ``` yml
 orbs:
-  rubocop: boxt/rubocop@0.2.0
+  rubocop: boxt/rubocop@0.2.1
 
 ```
 
