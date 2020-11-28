@@ -17,11 +17,11 @@ commands:
     steps:
       - restore_cache:
           keys:
-            - assets-cache-{{ .Environment.CIRCLE_SHA1 }}
+            - assets-cache-{{ .Branch }}
   cache-write:
     steps:
       - save_cache:
-          key: assets-cache-{{ .Environment.CIRCLE_SHA1 }}
+          key: assets-cache-{{ .Branch }}
           paths:
             - ./public/assets
             - ./public/packs-test
