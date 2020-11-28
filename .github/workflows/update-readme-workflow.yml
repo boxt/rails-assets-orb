@@ -20,7 +20,7 @@ jobs:
 
           \`\`\` yml
           orbs:
-            rubocop: boxt/rubocop@$VERSION
+            rubocop: boxt/rails-assets@$VERSION
 
           \`\`\`
 
