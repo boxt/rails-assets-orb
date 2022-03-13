@@ -4,7 +4,7 @@ description: Tasks for managing Rails assets in CircleCI builds
 
 display:
   home_url: "https://github.com/boxt/orbs"
-  source_url: "https://github.com/boxt/rails-assets-orb/blob/master/config.yml"
+  source_url: "https://github.com/boxt/rails-assets-orb/blob/main/config.yml"
 
 commands:
   assets-cache-key:
