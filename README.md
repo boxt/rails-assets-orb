@@ -5,7 +5,7 @@
 
 ``` yml
 orbs:
-  rubocop: boxt/rails-assets@0.3.0
+  rubocop: boxt/rails-assets@0.4.1
 
 ```
 
