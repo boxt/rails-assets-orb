@@ -10,19 +10,21 @@ commands:
   assets-cache-key:
     steps:
       - run:
-          name: Generate assets cache key
+          name: Generate Rails assets cache key
           command: find app/javascript -type f -exec md5sum {} \; > assets_cache_key
   cache-read:
     steps:
       - assets-cache-key
       - restore_cache:
           keys:
-            - assets-cache-{{ arch }}-{{ .Branch }}-{{ checksum "assets_cache_key" }}
+            - rails-assets-cache-{{ arch }}-{{ .Branch }}-{{ checksum "assets_cache_key" }}
+          name: "Restore Rails assets cache"
   cache-write:
     steps:
       - assets-cache-key
       - save_cache:
-          key: assets-cache-{{ arch }}-{{ .Branch }}-{{ checksum "assets_cache_key" }}
+          key: rails-assets-cache-{{ arch }}-{{ .Branch }}-{{ checksum "assets_cache_key" }}
+          name: "Save Rails assets cache"
           paths:
             - public/assets
             - public/packs-test
@@ -31,5 +33,5 @@ commands:
   precompile:
     steps:
       - run:
-          name: "Precompile assets"
+          name: "Precompile Rails assets"
           command: bundle exec rails assets:precompile
