@@ -9,7 +9,7 @@ jobs:
     name: "Update this repo's README with installation snippet using latest version"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-ruby@v1
       - name: "Update README"
         run: |

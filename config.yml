@@ -17,13 +17,13 @@ commands:
       - assets-cache-key
       - restore_cache:
           keys:
-            - rails-assets-cache-{{ arch }}-{{ .Branch }}-{{ checksum "assets_cache_key" }}
+            - rails-assets-cache-{{ arch }}-{{ checksum "assets_cache_key" }}
           name: "Restore Rails assets cache"
   cache-write:
     steps:
       - assets-cache-key
       - save_cache:
-          key: rails-assets-cache-{{ arch }}-{{ .Branch }}-{{ checksum "assets_cache_key" }}
+          key: rails-assets-cache-{{ arch }}-{{ checksum "assets_cache_key" }}
           name: "Save Rails assets cache"
           paths:
             - public/assets
