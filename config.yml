@@ -12,24 +12,29 @@ commands:
       - run:
           name: Generate Rails assets cache key
           command: find app/javascript -type f -exec md5sum {} \; > assets_cache_key
+
   cache-read:
     steps:
       - assets-cache-key
       - restore_cache:
           keys:
-            - rails-assets-cache-{{ arch }}-{{ checksum "assets_cache_key" }}
+            - rails-assets-cache-{{ .Branch }}-{{ checksum "assets_cache_key" }}
+            - rails-assets-cache-{{ .Branch }}-
+            - rails-assets-cache-
           name: "Restore Rails assets cache"
+
   cache-write:
     steps:
       - assets-cache-key
       - save_cache:
-          key: rails-assets-cache-{{ arch }}-{{ checksum "assets_cache_key" }}
+          key: rails-assets-cache-{{ .Branch }}-{{ checksum "assets_cache_key" }}
           name: "Save Rails assets cache"
           paths:
             - public/assets
             - public/packs-test
             - tmp/cache/assets
             - tmp/cache/webpacker
+
   precompile:
     steps:
       - run:
